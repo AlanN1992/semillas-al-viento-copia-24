@@ -8,7 +8,18 @@ class Planta inherits Parcela{
 	method esFuerte(){ return (self.horasSolTolera() >= 9) }
 	method daSemilla(){ return (self.esFuerte())}
 	method espacioOcupado()
-	method parcelaIdeal()	
+	method parcelaIdeal()
+	method seAsociaBien(){
+		var seAsocia
+		if (self.tipoParcela() == 'ecologica'){
+			if(not self.tieneComplicaciones() and self.parcelaIdeal()){seAsocia = true}
+			else {seAsocia = false} 
+			}
+		else{
+			if (plantas.size() == 2 and self.esFuerte()){seAsocia = true}
+			else {seAsocia=false}
+			}
+	}	
 }
 
 class Menta inherits Planta{

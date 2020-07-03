@@ -15,4 +15,9 @@ class Parcela{
 		const noTieneMasSol = ( horasDeSol -  newPlanta.horasSolTolera() ) <=2
 		if (tieneEspacio and noTieneMasSol) {plantas.add(newPlanta)} else { self.error("Parcela completa o mucho sol para la planta")} 
 	}	
+	method cantidadPlantas(){return plantas.size()}
+	method cantidadPlantasBienAsociadas(){ 
+		const cantidad =  plantas.filter({cosa => cosa.seAsociaBien()}) 
+		return cantidad.size()
+	}
 }
