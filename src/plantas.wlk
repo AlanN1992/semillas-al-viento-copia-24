@@ -49,6 +49,7 @@ class Quinoa inherits Planta{
 	override method horasSolTolera(){ return if(espacioOcupaQuinoa < 0.3){return 10} else {super()} }
 	override method daSemilla(){ return(super() or anioObtencion < 2005) }
 	override method parcelaIdeal(){ return (plantas.all({cosa=>cosa.altura() < 1.5}))}
+	override method espacioOcupado(){return espacioOcupaQuinoa}
 }
 
 class SojaTransgenica inherits Soja{
